@@ -1,0 +1,566 @@
+.ms-root {
+  --paper: #f5f3ec;
+  --sheet: #fdfcf6;
+  --ink: #1b2029;
+  --muted: #62636c;
+  --line: #ced0c8;
+  --port: #2439ba;
+  --red: #263ab2;
+  --peach: #dce8f5;
+  --lime: #e6fb64;
+  position: relative;
+}
+.ms-top {
+  background: #1c2130;
+  color: #f1f0e9;
+  border: 0;
+}
+.ms-topinner,
+.ms-hero-inner,
+.ms-wrap,
+.ms-footer,
+.ms-band-inner {
+  width: min(1512px, calc(100% - clamp(34px, 8.6vw, 152px)));
+  margin-inline: auto;
+}
+.ms-topinner {
+  height: 69px;
+}
+.ms-logomark {
+  background: #dfea6b;
+  color: #1b2130;
+  border-radius: 50%;
+  width: 37px;
+  height: 37px;
+}
+.ms-logomark .ms-icon {
+  transform: rotate(-22deg);
+  stroke-width: 1.7;
+}
+.ms-brand b {
+  font:
+    570 20px/1.05 'Golos Text',
+    sans-serif;
+  letter-spacing: -0.064em;
+}
+.ms-brand small {
+  color: #bdc5d6;
+  font-size: 10px;
+}
+.ms-top nav {
+  gap: 3px;
+}
+.ms-top nav button {
+  border-radius: 25px;
+  color: #d5d7e1;
+  padding: 8px 14px;
+  font-size: 13px;
+}
+.ms-top nav button.active {
+  background: #f1f1e8;
+  color: #1b2130;
+}
+.ms-top nav button:hover {
+  color: #161b25;
+  background: var(--lime);
+}
+.ms-master-switch {
+  border-color: #666f83;
+}
+.ms-master-switch .ms-avatar {
+  color: #29374d;
+  background: #d1d9e8;
+}
+.ms-hero {
+  background: #263bb7;
+  color: #f8f7ee;
+  position: relative;
+  isolation: isolate;
+}
+.ms-hero:after {
+  display: none;
+}
+.ms-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(110deg, #1e31a3, transparent 62%),
+    radial-gradient(ellipse at 82% 58%, #607bf8 0%, #344ac4 45%, #2535a1 85%);
+}
+.ms-hero-inner {
+  min-height: 300px;
+  padding: 38px 0 40px;
+  overflow: visible;
+  z-index: 1;
+}
+.ms-hero-text {
+  position: relative;
+  z-index: 2;
+}
+.ms-hero .ms-kicker {
+  color: #ebefff;
+  font-size: 12px;
+  letter-spacing: 0.015em;
+}
+.ms-root h1,
+.ms-root h2 {
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
+  font-weight: 560;
+  letter-spacing: -0.054em;
+}
+.ms-root .ms-hero h1 {
+  font:
+    620 clamp(72px, 6.9vw, 125px)/1.03 'Oswald',
+    sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.063em;
+  margin: 7px 0 8px;
+}
+.ms-hero h1 span {
+  color: var(--lime);
+}
+.ms-hero-text > p {
+  color: #e3e6ff;
+  font-size: 18px;
+  font-weight: 480;
+}
+.ms-hero-meta {
+  margin-top: 15px;
+  gap: 12px;
+}
+.ms-hero-meta > span {
+  font-size: 12px;
+  color: #f8f8f2;
+}
+.ms-hero-meta i {
+  background: #aab6ff;
+}
+.ms-orbits {
+  width: 28%;
+  height: auto;
+  aspect-ratio: 1;
+  position: absolute;
+  left: 75%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.ms-orbits i {
+  position: absolute;
+  inset: 8%;
+  border: 1px solid #c2d4ff55;
+  border-radius: 50%;
+}
+.ms-orbits i + i {
+  inset: 21%;
+  border-style: dashed;
+  opacity: 0.75;
+}
+.ms-shears-stage {
+  position: absolute;
+  top: 69px;
+  right: 5vw;
+  width: 43%;
+  height: 300px;
+  z-index: 2;
+  pointer-events: auto;
+  overflow: hidden;
+}
+.ms-shears-stage salon-shears {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.ms-root:not([data-tab='day']) .ms-shears-stage {
+  display: none;
+}
+.ms-band {
+  background: #192036;
+  color: #e2eae9;
+  padding: 12px 0 13px;
+}
+.ms-band-inner {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.ms-band-inner > b {
+  font-size: 11px;
+  font-weight: 500;
+  color: #ced3e6;
+}
+.ms-band-axis {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex: 1;
+  gap: 4px;
+  font:
+    10px 'Golos Text',
+    sans-serif;
+  color: #d4daea;
+  font-variant-numeric: tabular-nums;
+}
+.ms-band-bed {
+  position: relative;
+  width: 100%;
+  height: 10px;
+  background:
+    repeating-linear-gradient(90deg, #586082 0 1px, transparent 1px 3.125%),
+    #333b54;
+  border-radius: 1px;
+}
+.ms-root .ms-band-item {
+  position: absolute;
+  left: var(--start);
+  width: var(--length);
+  height: 100%;
+  background: var(--lime);
+  border-right: 2px solid #181e31;
+  transition: filter 0.16s;
+}
+.ms-root .ms-band-item.pause {
+  background: repeating-linear-gradient(120deg, #c6d2ff 0 2px, #69748d 2px 5px);
+}
+.ms-band-item:hover,
+.ms-band-item:focus-visible {
+  filter: brightness(1.2);
+  box-shadow: 0 0 0 2px #f9f9ea;
+}
+.ms-datebar {
+  padding: 16px 0;
+  gap: 15px;
+}
+.ms-date {
+  min-width: 56px;
+  border-radius: 0;
+}
+.ms-date b {
+  font:
+    550 23px/1.15 'Oswald',
+    sans-serif;
+}
+.ms-date.active {
+  background: #1c2230;
+  color: #effc79;
+  box-shadow: inset 0 -3px 0 var(--lime);
+}
+.ms-date.active span {
+  color: #f1f0eb;
+}
+.ms-datepicker,
+.ms-root .ms-btn {
+  border-radius: 2px;
+}
+.ms-root .ms-primary {
+  background: #202630;
+  color: #fff;
+}
+.ms-root .ms-primary:hover {
+  background: #334bc7;
+}
+.ms-root .ms-btn.ms-ghost:hover {
+  background: #dbe1f2;
+}
+.ms-root h2 {
+  text-transform: uppercase;
+  font-size: clamp(30px, 3.2vw, 47px);
+  line-height: 1.08;
+}
+.ms-cols {
+  padding-top: 28px;
+  gap: clamp(30px, 4vw, 76px);
+}
+.ms-sectiontitle p {
+  display: none;
+}
+.ms-rows {
+  border-top: 2px solid #242a38;
+}
+.ms-root .ms-entry {
+  grid-template-columns: 74px 3px 1fr 30px;
+  gap: 14px;
+  padding: 14px 5px;
+}
+.ms-entry:hover {
+  background: #e5e8f1;
+}
+.ms-strand {
+  background: #5363b2;
+  height: 34px;
+  border-radius: 0;
+}
+.ms-time b {
+  font:
+    500 24px/1.1 'Oswald',
+    sans-serif;
+  letter-spacing: -0.04em;
+}
+.ms-time small {
+  font-size: 10px;
+}
+.ms-entry-name b {
+  font-weight: 550;
+  font-size: 16px;
+}
+.ms-entry-name small {
+  font-size: 12px;
+}
+.ms-pass {
+  background: var(--lime);
+  color: #18221f;
+  border: 0;
+  border-radius: 0;
+  box-shadow: 4px 4px 0 #20262d;
+}
+.ms-pass:before {
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+  right: 8%;
+  top: 0;
+  width: 60px;
+  height: 26px;
+  background: repeating-linear-gradient(
+    90deg,
+    #273423 0 1px,
+    transparent 1px 4px,
+    #273423 4px 6px,
+    transparent 6px 9px
+  );
+  opacity: 0.55;
+}
+.ms-dot {
+  display: none;
+}
+.ms-pass-time {
+  font:
+    600 clamp(48px, 4.85vw, 75px)/0.98 'Oswald',
+    sans-serif;
+  letter-spacing: -0.055em;
+}
+.ms-pass-time small {
+  color: #434d33;
+}
+.ms-pass-name {
+  font-family: 'Golos Text', sans-serif;
+  font-weight: 570;
+  letter-spacing: -0.057em;
+}
+.ms-pass blockquote {
+  border-left-color: #7e9450;
+  color: #343f2d;
+}
+.ms-pass button {
+  border-top-color: #627735;
+}
+.ms-root .ms-avatar {
+  background: #d2d9ed;
+  color: #283788;
+}
+.ms-dialog {
+  border: 1px solid #202b3c;
+  border-radius: 3px;
+  box-shadow:
+    8px 8px 0 #2730442b,
+    0 24px 80px #11172d3d;
+}
+.ms-dialog::backdrop {
+  background: #16214383;
+}
+.ms-round-icon {
+  color: #263ab0;
+  background: #e2e8f8;
+}
+.ms-note {
+  background: #edf0d6;
+}
+.ms-bigtime,
+.ms-form .ms-bigtime {
+  font-family: 'Oswald', sans-serif;
+  color: #263ab2;
+}
+.ms-toast {
+  background: #1c2230;
+  color: #f6f6ee;
+  border-bottom: 2px solid var(--lime);
+}
+.ms-root .ms-alt h1 {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  font-size: clamp(45px, 6vw, 86px);
+  color: #263ab2;
+}
+@media (max-width: 850px) {
+  .ms-shears-stage {
+    right: 0;
+    width: 43%;
+  }
+  .ms-hero-inner {
+    min-height: 245px;
+  }
+  .ms-shears-stage {
+    height: 245px;
+  }
+  .ms-date {
+    min-width: 44px;
+  }
+  .ms-top nav button {
+    padding: 8px 9px;
+  }
+}
+@media (max-width: 650px) {
+  .ms-topinner {
+    height: 92px;
+    min-height: 92px;
+    grid-template-rows: 52px 36px;
+  }
+  .ms-top nav button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  .ms-brand b {
+    font-size: 16px;
+  }
+  .ms-brand small {
+    font-size: 9px;
+  }
+  .ms-topinner,
+  .ms-hero-inner,
+  .ms-wrap,
+  .ms-footer,
+  .ms-band-inner {
+    width: calc(100% - 32px);
+  }
+  .ms-hero-inner {
+    min-height: 190px;
+    padding: 22px 0;
+  }
+  .ms-root .ms-hero h1 {
+    font-size: clamp(44px, 11.1vw, 70px);
+    margin: 7px 0;
+  }
+  .ms-hero-text > p {
+    font-size: 13px;
+  }
+  .ms-hero .ms-kicker {
+    font-size: 9px;
+  }
+  .ms-hero-meta {
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .ms-hero-meta > span {
+    font-size: 9px;
+  }
+  .ms-hero-meta > span .ms-icon {
+    width: 12px;
+    height: 12px;
+  }
+  .ms-shears-stage {
+    top: 92px;
+    right: 0;
+    width: 44%;
+    height: 188px;
+  }
+  .ms-orbits {
+    left: 83%;
+    width: 39%;
+  }
+  .ms-band {
+    padding: 8px 0;
+  }
+  .ms-band-inner {
+    gap: 10px;
+  }
+  .ms-band-inner > b {
+    font-size: 9px;
+  }
+  .ms-band-axis {
+    font-size: 8px;
+    gap: 3px;
+  }
+  .ms-band-bed {
+    height: 7px;
+  }
+  .ms-datebar {
+    padding: 10px 0;
+    gap: 0;
+  }
+  .ms-date {
+    min-width: 0;
+  }
+  .ms-date b {
+    font-size: 18px;
+  }
+  .ms-cols {
+    padding-top: 14px;
+    gap: 20px;
+  }
+  .ms-root h2 {
+    font-size: 31px;
+  }
+  .ms-pass-time {
+    font-size: 37px;
+  }
+  .ms-pass-name {
+    font-size: 17px;
+  }
+  .ms-pass:before {
+    right: 12%;
+    height: 12px;
+    opacity: 0.33;
+  }
+  .ms-root .ms-entry {
+    grid-template-columns: 51px 3px 1fr 19px;
+    gap: 11px;
+    padding: 12px 0;
+  }
+  .ms-time b {
+    font-size: 20px;
+  }
+  .ms-entry-name b {
+    font-size: 14px;
+  }
+  .ms-entry-name small {
+    font-size: 11px;
+  }
+}
+@media (max-width: 365px) {
+  .ms-shears-stage {
+    width: 40%;
+  }
+  .ms-hero-meta {
+    gap: 4px;
+  }
+  .ms-top nav button {
+    padding: 6px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ms-root * {
+    scroll-behavior: auto !important;
+  }
+}
+
+.ms-no-roster {
+  display: grid;
+  justify-items: start;
+  align-content: start;
+  gap: 14px;
+  min-height: 58vh;
+}
+.ms-no-roster h1,
+.ms-no-roster p {
+  margin: 0;
+}
+.ms-no-roster > p:not(.ms-kicker) {
+  max-width: 46ch;
+  color: var(--muted);
+  line-height: 1.55;
+}
+.ms-no-roster a {
+  margin-top: 8px;
+  text-decoration: none;
+}
